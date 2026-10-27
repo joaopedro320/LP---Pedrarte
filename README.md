@@ -51,9 +51,19 @@ Tudo veio do briefing (formulário respondido pelo Guilherme de Oliveira Ascenç
 - Fundo **claro** escolhido no briefing; sem paleta e sem fonte definidas, então: Poppins (títulos) + Inter (texto), cores tiradas do logo (vermelho #C4161C, grafite #2A2C2F) com bege das cubas como apoio.
 - Fotos: Instagram @marmorariapedrarte (pasta 03. Imagens). O vídeo .mp4 da pasta não foi usado.
 
+## Ajustes do Guilherme Gomes (27/10/2026)
+
+- Removida a linha de localização acima da headline (local entra em outra parte).
+- Headline: "Marmoraria de qualidade perto de você, com acabamento de alto padrão".
+- Subheadline: "Banheiros, cozinhas e bancadas. Transformamos seu ambiente! Atendemos toda a região de Belo Horizonte, Lagoa Santa, Nova Lima, Pampulha e arredores."
+- Botão do topo virou "Entrar em contato" e vai direto pro WhatsApp com "Olá. Vim pelo Google e gostaria de mais informações."
+- Botão do hero agora manda "Olá, vim pelo Google e gostaria de solicitar um orçamento."
+- Removida a linha de fatos abaixo dos botões (41 anos / de pai para filho / antes e depois).
+- Lagoa Santa e Nova Lima adicionadas como área atendida no JSON-LD.
+
 ## Animações
 
-- Hero: título entra palavra por palavra, veios de mármore desenhados em SVG atrás da foto, foto abre de cima pra baixo, inclinação da foto e do selo 1985 acompanhando o mouse (desktop), parallax leve, contador de 0 a 41 anos e brilho periódico no botão do WhatsApp.
+- Hero: título entra palavra por palavra, veios de mármore desenhados em SVG atrás da foto, foto abre de cima pra baixo, inclinação da foto e do selo 1985 acompanhando o mouse (desktop), parallax leve, e brilho periódico no botão do WhatsApp.
 - Topo some ao descer e volta ao subir; barra vermelha de progresso de leitura no topo.
 - Faixa de público entra em sequência; faixa de materiais rolando entre Trabalhos e Pedras (pausa no hover).
 - Títulos de seção sobem por trás de uma máscara; galeria abre em cortina, item por item.
@@ -74,7 +84,7 @@ Campos: nome, WhatsApp, perfil (cliente final / arquiteta ou decoradora / emprei
 
 | Evento | Quando | Parâmetros |
 |---|---|---|
-| `whatsapp_click` | clique em qualquer link de WhatsApp | `origem`: hero, pedra-granito, pedra-quartzito, pedra-marmore, pedra-quartzo, pedra-ardosia, mostruario, rodape, flutuante |
+| `whatsapp_click` | clique em qualquer link de WhatsApp | `origem`: topo, hero, pedra-granito, pedra-quartzito, pedra-marmore, pedra-quartzo, pedra-ardosia, mostruario, rodape, flutuante |
 | `form_start` | primeira interação com o formulário | |
 | `generate_lead` | envio do formulário | `form`, `pedra`, `perfil` |
 | `pedra_selecionada` | troca de aba na seção de pedras | `pedra` |

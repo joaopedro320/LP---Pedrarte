@@ -72,7 +72,7 @@ p{margin:0 0 1em}
 .hero__local svg{width:18px;height:18px;fill:var(--vermelho)}
 .hero__titulo{font-size:clamp(2.1rem,1.2rem + 3.6vw,3.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:15ch;margin-bottom:24px}
 .hero__sub{font-size:1.125rem;max-width:54ch;margin-bottom:32px}
-.hero__acoes{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.hero__acoes{display:flex;flex-wrap:wrap;gap:14px}
 .hero__fatos{list-style:none;margin:0;padding:24px 0 0;border-top:2px solid var(--grafite);display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:560px}
 .hero__fatos strong{display:block;font:700 1.05rem/1.2 var(--f-tit);color:var(--grafite)}
 .hero__fatos span{font-size:.88rem}
@@ -448,3 +448,8 @@ html.anim .wa-float.on:hover{transform:scale(1.08)}
   .faixa__trilho{animation:none}
   .topo.is-oculto{transform:none}
 }
+
+/* Linha do tempo passa por trás dos números das etapas */
+.passos::before,.passos::after{z-index:0}
+.passos li::before{z-index:1}
+.passos li>*{position:relative;z-index:1}
