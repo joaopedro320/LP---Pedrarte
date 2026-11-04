@@ -15,7 +15,8 @@ site.webmanifest
 vercel.json           cache dos assets, headers de segurança e noindex no obrigado
 assets/
   css/style.css
-  js/main.js          menu, abas de pedras, galeria, formulário, eventos do dataLayer
+  js/tracking.js      eventos padrão QH4 no dataLayer (whatsapp_click, form_start)
+  js/main.js          menu, abas de pedras, galeria, formulário, generate_lead
   img/                fotos em .webp, logo (normal e branca), favicons, og-pedrarte.jpg
 ```
 
@@ -61,6 +62,18 @@ Tudo veio do briefing (formulário respondido pelo Guilherme de Oliveira Ascenç
 - Removida a linha de fatos abaixo dos botões (41 anos / de pai para filho / antes e depois).
 - Lagoa Santa e Nova Lima adicionadas como área atendida no JSON-LD.
 
+## Ajustes do Guilherme Gomes (04/11/2026)
+
+- Subheadline: "Transformamos seu ambiente! Pisos paginados, banheiros, cozinhas, mesas personalizadas, escadas e revestimentos externos. Atendemos BH e toda a região metropolitana."
+- Depoimento do bloco "Por que a gente não corre com a sua pedra" trocado pelo texto enviado pelo cliente.
+
+## Ajustes da análise QH4 (04/11/2026)
+
+- Slots `[QH4 SLOT 1 a 8]` comentados em index, obrigado e 404 (GTM movido para o topo do head).
+- Rodapé "Desenvolvido por QH4 Growth" corrigido (estava "pro") e adicionado em obrigado e 404.
+- `assets/js/tracking.js` com os eventos padrão; `thank_you_view` no obrigado.
+- Title no formato "[Nicho] em [Cidade] | [Cliente]" e meta description com 120 a 160 caracteres.
+
 ## Animações
 
 - Hero: título entra palavra por palavra, veios de mármore desenhados em SVG atrás da foto, foto abre de cima pra baixo, inclinação da foto e do selo 1985 acompanhando o mouse (desktop), parallax leve, e brilho periódico no botão do WhatsApp.
@@ -88,7 +101,8 @@ Campos: nome, WhatsApp, perfil (cliente final / arquiteta ou decoradora / emprei
 | `form_start` | primeira interação com o formulário | |
 | `generate_lead` | envio do formulário | `form`, `pedra`, `perfil` |
 | `pedra_selecionada` | troca de aba na seção de pedras | `pedra` |
-| `pagina_obrigado` | carregamento do obrigado.html | |
+| `thank_you_view` | carregamento do obrigado.html (padrão QH4) | |
+| `pagina_obrigado` | carregamento do obrigado.html (mantido por compatibilidade com tags antigas) | |
 
 Sugestão para o Google Ads: conversão principal em `generate_lead` + `pagina_obrigado`, secundária em `whatsapp_click`.
 

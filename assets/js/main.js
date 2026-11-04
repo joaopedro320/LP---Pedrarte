@@ -3,7 +3,8 @@
   'use strict';
   var WA = '553134614493';
   window.dataLayer = window.dataLayer || [];
-  function track(evento, dados) { window.dataLayer.push(Object.assign({ event: evento }, dados || {})); }
+  // Eventos padrão ficam em tracking.js; aqui só o generate_lead e os eventos próprios da LP
+  function track(evento, dados) { (window.qh4Track || function (ev, d) { window.dataLayer.push(Object.assign({ event: ev }, d || {})); })(evento, dados); }
 
   // Ano no rodapé
   var ano = document.getElementById('ano');
@@ -133,11 +134,6 @@
   menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', fechaMenu); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { fechaMenu(); fechaLb(); } });
 
-  // Cliques no WhatsApp
-  document.querySelectorAll('.js-wa').forEach(function (a) {
-    a.addEventListener('click', function () { track('whatsapp_click', { origem: a.dataset.origem || 'link' }); });
-  });
-
   // Revelação no scroll
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduz) {
@@ -237,13 +233,11 @@
   });
   whats.addEventListener('blur', function () { whats.classList.toggle('is-erro', whats.value !== '' && !whats.checkValidity()); });
 
-  var iniciou = false;
   function valida() {
     var ok = form.checkValidity();
     if (ok && btn.disabled) { btn.classList.remove('liberou'); void btn.offsetWidth; btn.classList.add('liberou', 'brilha'); }
     btn.disabled = !ok;
     aviso.textContent = ok ? 'Tudo certo. Ao enviar, o WhatsApp abre com a sua mensagem pronta.' : 'Preencha os campos para liberar o envio.';
-    if (!iniciou) { iniciou = true; track('form_start'); }
   }
   form.addEventListener('input', valida);
   form.addEventListener('change', valida);
