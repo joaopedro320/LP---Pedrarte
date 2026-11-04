@@ -453,3 +453,4 @@ html.anim .wa-float.on:hover{transform:scale(1.08)}
 .passos::before,.passos::after{z-index:0}
 .passos li::before{z-index:1}
 .passos li>*{position:relative;z-index:1}
+.rodape--simples{padding:0 0 4px}
